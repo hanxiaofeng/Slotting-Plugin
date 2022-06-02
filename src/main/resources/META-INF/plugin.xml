@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>org.slotting.SlottingHelp</id>
+    <name>Slotting</name>
+    <vendor email="test@yourcompany.com" url="http://www.test.com">TestCompany</vendor>
+
+    <description>
+        Enter short description for your plugin here
+    </description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!--如下所示添加行标记扩展 -->
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="com.slotting.marker.HaloLineMarker"/>
+
+    </extensions>
+
+    <actions>
+
+        <action id="org.slotting.SlottingHelp.SlottingAction"
+                class="com.slotting.SlottingAction" text="SlottingCode">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt H"/>
+        </action>
+
+        <!--        <group id="org.slotting.SlottingHelp" text="Slotting Help"-->
+        <!--               description="Slotting" popup="true">-->
+        <!--            <add-to-group group-id="EditorPopupMenu" anchor="first"/>-->
+        <!--&lt;!&ndash;            <action id="org.slotting.SlottingHelp.SlottingAction"&ndash;&gt;-->
+        <!--&lt;!&ndash;                    class="com.slotting.SlottingAction" text="Help Menu">&ndash;&gt;-->
+        <!--&lt;!&ndash;                <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt H"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;            </action>&ndash;&gt;-->
+        <!--        </group>-->
+
+
+        <!-- Add your actions here -->
+        <!--        <action id="slotting_help_plugin_fast" class="plugin.SlottingAction" text="Slotting" description="Slotting">-->
+        <!--            <add-to-group group-id="HelpMenu" anchor="first"/>-->
+        <!--            <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt H"/>-->
+        <!--        </action>-->
+    </actions>
+</idea-plugin>
